@@ -7,55 +7,39 @@ possible new home beyond Earth.
 
 The main idea throughout was to understand why the results made sense,
 rather than just show an answer.
+
 What's in the project?
+
 PS1 --- Rocket design and simulation
 For the rocket problem, we worked with the mission constraints,
 including a two-stage setup, a 1 kg payload, and a target altitude of
 4,000 m. We used OpenRocket to explore the design and understand how the
 different choices affected the flight.
-
-Some of the things we considered: - Using a booster for the initial
-acceleration and a sustainer for the rest of the flight. - Splitting the
-payload into two 0.5 kg masses to work around an OpenRocket
-limitation. - Adding ballast to fine-tune the apogee. - Checking the
-deployment behaviour, including the warning that the rocket could still
-have sideways velocity at apogee.
-
 The simulation met the listed requirements, but we also noted that a
 real build would need extra attention to the shock cord and deployment
 loads.
+
 PS2 --- Solar radiation data analysis
 For this problem, we analysed solar prediction data using Python. The
 raw dataset stored the date and time separately, so the first step was
 to combine them into a proper datetime column. Getting that right made
 it easier to analyse the readings by time and by day.
-
 We looked at both daily plots and the dataset as a whole, then compared
 the patterns we could see. We also found the time of the highest
 radiation reading for each day and ranked the strongest readings.
 
-One important detail: temperature was treated as an indicator of strong
-sunshine, not as the cause of solar radiation. The unusually low
-averages on 8 and 9 September were linked to missing data rather than a
-genuine change in the weather. The highest reading highlighted in our
-analysis was 1601 W/m² on 4 September, around 6 hours and 7
-minutes after sunrise.
 PS3 --- Exoplanets and habitability
 The third problem focused on identifying which candidate exoplanet might
 be the best option for further study. We compared repeating transit
 dips, estimated planet sizes from transit depth, and used orbital
 periods and stellar mass to estimate orbital distances.
 
-We then compared each planet's orbit with its star's habitable zone.
-Since a star's brightness affects where that zone lies, we used the
-deviance factor to describe how far a planet's orbit was from the
-estimated habitable-zone distance.
-
 STAC-3 came out as our strongest candidate based on the comparisons
 in our analysis: it was closest to the habitable zone, had an Earth-like
 estimated temperature, and was likely rocky. That is not proof that it
 could support life, though. More evidence --- especially spectroscopy
 --- would be needed to understand its atmosphere and conditions.
+
 Tools and concepts used
 - Python for working with and analysing the solar dataset
 - Pandas and NumPy for data processing
